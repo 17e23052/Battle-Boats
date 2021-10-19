@@ -64,13 +64,24 @@ def newgame():
   print("Here is the grid layout. This is your fleet grid:")
   sleep(1)
   empty_board("P1")
-  displayboard(open("battleboatP1.csv","r")) #This displays the grid layout
+  file = open("battleboatP1.csv","r")
+  data = []
+  for line in file:
+    line = line.strip("\n")
+    line = line.split(",")
+    data.append(line)
+  displayboard(data) #This displays the grid layout
   sleep(3)
   i = 0
   while i < 5:
     boat_location = input("Please enter 5 grid spaces to place your boats: ")
     print(ord(boat_location[0])- 64)
     i += 1  #                           ^^ Here we enter coordinates ^^
+
+def resumegame():
+  print("Work in progress LOL")
+  print()
+  menu()
 
 def instructions():
   print('''Battle boats is a turn based strategy game where players eliminate their opponents fleet of boats by
