@@ -72,11 +72,48 @@ def newgame():
     data.append(line)
   displayboard(data) #This displays the grid layout
   sleep(3)
-  i = 0
-  while i < 5:
-    boat_location = input("Please enter 5 grid spaces to place your boats: ")
-    print(ord(boat_location[0])- 64)
-    i += 1  #                           ^^ Here we enter coordinates ^^
+  print("Enter your five boat locations:")
+  check_space()
+  check_space()
+  check_space()
+  check_space()
+  check_space()
+
+def check_space():
+  boat = input().upper()
+  for letter in boat:
+    if letter == "A":
+      letter2 = 1
+    elif letter == "B":
+      letter2 = 2
+    elif letter == "C":
+      letter2 = 3
+    elif letter == "D":
+      letter2 = 4
+    elif letter == "E":
+      letter2 = 5
+    elif letter == "F":
+      letter2 = 6
+    elif letter == "G":
+      letter2 = 7
+    elif letter == "H":
+      letter2 = 8
+    elif letter == "1":
+      letter1 = 1
+    elif letter == "2":
+      letter1 = 2
+    elif letter == "3":
+      letter1 = 3
+    elif letter == "4":
+      letter1 = 4
+    elif letter == "5":
+      letter1 = 5
+    elif letter == "6":
+      letter1 = 6
+    elif letter == "7":
+      letter1 = 7
+    elif letter == "8":
+      letter1 = 8
 
 def resumegame():
   print("Work in progress LOL")
