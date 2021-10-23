@@ -115,7 +115,7 @@ def check_space(board):
       letter1 = 6
     elif letter == "8":
       letter1 = 7
-    boat = board[letter2)][letter1]
+    boat = board[letter2][letter1]
 
 def resumegame():
   print("Work in progress LOL")
