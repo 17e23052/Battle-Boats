@@ -1,12 +1,13 @@
 from time import sleep
-def menu():
+board = ""
+def menu(board):
   print("Option 1 = New game")
   print("Option 2 = Resume game")
   print("Option 3 = Instructions")
   print("Option 4 = Quit")
   option = input("Enter option number: ")
   if option == "1":
-    newgame() #This starts a new game
+    newgame(board) #This starts a new game
   elif option == "2":
     resumegame() #This resumes the previous saved game
   elif option == "3":
@@ -56,7 +57,7 @@ def empty_board(player):
   file.write(data) #Writing the data to the board
   file.close()
 
-def newgame():
+def newgame(board):
   empty_board("P1")
   empty_board("P2")
   print("Welcome to battle boats!")
@@ -73,47 +74,48 @@ def newgame():
   displayboard(data) #This displays the grid layout
   sleep(3)
   print("Enter your five boat locations:")
-  check_space()
-  check_space()
-  check_space()
-  check_space()
-  check_space()
+  check_space(board)
+  check_space(board)
+  check_space(board)
+  check_space(board)
+  check_space(board)
 
-def check_space():
+def check_space(board):
   boat = input().upper()
   for letter in boat:
     if letter == "A":
-      letter2 = 1
+      letter2 = 0
     elif letter == "B":
-      letter2 = 2
+      letter2 = 1
     elif letter == "C":
-      letter2 = 3
+      letter2 = 2
     elif letter == "D":
-      letter2 = 4
+      letter2 = 3
     elif letter == "E":
-      letter2 = 5
+      letter2 = 4
     elif letter == "F":
-      letter2 = 6
+      letter2 = 5
     elif letter == "G":
-      letter2 = 7
+      letter2 = 6
     elif letter == "H":
-      letter2 = 8
+      letter2 = 7
     elif letter == "1":
-      letter1 = 1
+      letter1 = 0
     elif letter == "2":
-      letter1 = 2
+      letter1 = 1
     elif letter == "3":
-      letter1 = 3
+      letter1 = 2
     elif letter == "4":
-      letter1 = 4
+      letter1 = 3
     elif letter == "5":
-      letter1 = 5
+      letter1 = 4
     elif letter == "6":
-      letter1 = 6
+      letter1 = 5
     elif letter == "7":
-      letter1 = 7
+      letter1 = 6
     elif letter == "8":
-      letter1 = 8
+      letter1 = 7
+    boat = board[letter2)][letter1]
 
 def resumegame():
   print("Work in progress LOL")
@@ -134,4 +136,4 @@ The game ends when a player's fleet of boats have been sunk. The winner is the p
 ''')
 
 
-menu()
+menu(board)
